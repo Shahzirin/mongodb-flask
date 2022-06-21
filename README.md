@@ -1,6 +1,6 @@
 # mongodb-flask
 
-Application with login to onboard users
+Flask application using mongodb atlas as database 
 
 Run venv
 python test1.py
