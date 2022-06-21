@@ -17,8 +17,9 @@ app = Flask(__name__)
 #for session encrypting
 app.secret_key = '\xef\xabVk\x0b\xde\xa6\x987\xa8\x8aU\xd7\xc6o\x1e\xf9\xa4\xbe\x12\x15\x0fK'
 
+
 #connection
-app.config['MONGO_URI'] = 'mongodb+srv://shahzirin:testing123@cluster0.nzxq0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = 'mongodb+srv://' + url
 mongo = PyMongo(app)
 
 
@@ -33,7 +34,7 @@ def make_session_permanent():
 def check_dbuser(username, password):
     auth = False
     roleCheck = False
-    uri = 'mongodb+srv://'+ username.lower() + ':' + password + '@cluster0.nzxq0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    uri = 'mongodb+srv://'+ username.lower() + url
     client = MongoClient(uri)
     try:
         client.admin.command({'connectionStatus': 1})
