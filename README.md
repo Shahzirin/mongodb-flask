@@ -1,6 +1,5 @@
 # mongodb-flask
 
-Flask application using mongodb atlas as database 
+**Flask application using mongodb atlas as database**
 
-Run venv
-python test1.py
+python test1.py --> to run application
